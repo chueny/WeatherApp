@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Weather API Dashboard </title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="./assets/style.css" />
+</head>
+
+<body>
+
+    <nav class="navbar navbar-black bg-black">
+        <span class="navbar-brand mb-0 h1">Weather Dashboard</span>
+    </nav>
+    
+    <div class="row">
+        <div class="col-md-4 "> Search for a city:
+            <input type="text" class="search"> 
+            <i class="fas fa-search"></i>
+           
+        </div>
+
+
+        <div class="col-md-8">
+            <div class="container">
+                <h class="city"></h>
+                <br>
+                <p class="tempF"></p>
+                <p class="humidity"></p>
+                <p class="wind"></p>
+                <p class="UV"></p>
+                <!-- <p class="temp"></p> -->
+            </div>
+
+            <div class="container-forecast">
+                <h2> 5-Day Forecast:</h2>
+                <p>DAY 1</p>
+
+            </div>
+
+        </div>
+    </div>
+ 
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="./assets/script.js"></script>
+
+</body>
+
+</html>

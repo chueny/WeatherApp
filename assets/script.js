@@ -73,7 +73,7 @@ $(document).ready(function(){
     var uv = 0;
 
     
-    var queryURL = "http://api.openweathermap.org/data/2.5/uvi?appid="+APIKey+"&lat="+lat+"&lon="+lon;
+    var queryURL = "https://api.openweathermap.org/data/2.5/uvi?appid="+APIKey+"&lat="+lat+"&lon="+lon;
     
     $.ajax({
       url: queryURL,
@@ -139,7 +139,7 @@ $(document).ready(function(){
   function fiveDayForecast(cityName){
     var APIKey = "621d0eb0706fc81d1dfe4fa639011f5e";
 
-    var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q="+cityName+"&appid="+APIKey; 
+    var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q="+cityName+"&appid="+APIKey; 
 
   
     $.ajax({
@@ -159,7 +159,7 @@ $(document).ready(function(){
         var date=moment(response.list[3].dt_txt).format('MM/DD/YYYY');
         var newDate = $('<p>').text(date);
         var icon=response.list[1].weather[0].icon;
-        var iconSrc="http://openweathermap.org/img/wn/"+icon+".png";
+        var iconSrc="https://openweathermap.org/img/wn/"+icon+".png";
         var tempP = $("<p>").text("Temp: "+((response.list[3].main.temp - 273.15) * 1.80 + 32).toFixed(2)+" °F");
         var humidP = $('<p>').text("Humidity: "+response.list[3].main.humidity+"%");
       
@@ -174,7 +174,7 @@ $(document).ready(function(){
         var date=moment(response.list[10].dt_txt).format('MM/DD/YYYY');
         var newDate = $('<p>').text(date);
         var icon=response.list[10].weather[0].icon;
-        var iconSrc="http://openweathermap.org/img/wn/"+icon+".png";
+        var iconSrc="https://openweathermap.org/img/wn/"+icon+".png";
         var tempP = $("<p>").text("Temp: "+((response.list[10].main.temp - 273.15) * 1.80 + 32).toFixed(2)+" °F");
         var humidP = $('<p>').text("Humidity: "+response.list[10].main.humidity+"%");
       
@@ -188,7 +188,7 @@ $(document).ready(function(){
         var date=moment(response.list[18].dt_txt).format('MM/DD/YYYY');
         var newDate = $('<p>').text(date);
         var icon=response.list[18].weather[0].icon;
-        var iconSrc="http://openweathermap.org/img/wn/"+icon+".png";
+        var iconSrc="https://openweathermap.org/img/wn/"+icon+".png";
         var tempP = $("<p>").text("Temp: "+((response.list[18].main.temp - 273.15) * 1.80 + 32).toFixed(2)+" °F");
         var humidP = $('<p>').text("Humidity: "+response.list[18].main.humidity+"%");
       
@@ -203,7 +203,7 @@ $(document).ready(function(){
         var date=moment(response.list[26].dt_txt).format('MM/DD/YYYY');
         var newDate = $('<p>').text(date);
         var icon=response.list[26].weather[0].icon;
-        var iconSrc="http://openweathermap.org/img/wn/"+icon+".png";
+        var iconSrc="https://openweathermap.org/img/wn/"+icon+".png";
         var tempP = $("<p>").text("Temp: "+((response.list[26].main.temp - 273.15) * 1.80 + 32).toFixed(2)+" °F");
         var humidP = $('<p>').text("Humidity: "+response.list[26].main.humidity+"%");
       
@@ -217,7 +217,7 @@ $(document).ready(function(){
         var date=moment(response.list[34].dt_txt).format('MM/DD/YYYY');
         var newDate = $('<p>').text(date);
         var icon=response.list[34].weather[0].icon;
-        var iconSrc="http://openweathermap.org/img/wn/"+icon+".png";
+        var iconSrc="https://openweathermap.org/img/wn/"+icon+".png";
         var tempP = $("<p>").text("Temp: "+((response.list[34].main.temp - 273.15) * 1.80 + 32).toFixed(2)+" °F");
         var humidP = $('<p>').text("Humidity: "+response.list[34].main.humidity+"%");
       

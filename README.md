@@ -4,18 +4,17 @@ forecast for that city. Current weather includes temperature, humidity, wind spe
 the UV index value.  User can continue to add cities to this list and when they refresh 
 the page, local storage should save search.
 
-
-#Link to deployed application
+# Link to deployed application 
 The easiest way to get to the application is through this link: https://chueny.github.io/WeatherApp/
 
 
-#Screen shots of the application 
+# Screen shots of the application 
 ![Screen Shot 2020-05-09 at 9 54 36 PM](https://user-images.githubusercontent.com/17972802/81489803-c261b680-923f-11ea-846e-c2a0fd5e4902.png)
 
 
-#Contributors
+# Contributors
 Chue Yang 
 
-#Licensing
+# Licensing
 @ Chue Yang
 

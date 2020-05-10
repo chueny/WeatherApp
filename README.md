@@ -5,7 +5,7 @@ the UV index value.  User can continue to add cities to this list and when they 
 the page, local storage should save search.
 
 # Link to deployed application 
-The easiest way to get to the application is through this link: https://chueny.github.io/WeatherApp/
+The easiest way to get to the application is through this link: https://chueny.github.io/WeatherApp/ .
 
 
 # Screen shots of the application 

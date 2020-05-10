@@ -64,6 +64,9 @@ margin: 5px;
 padding-top: 10px;
 border-radius: 10px;
 font-size: 15px;
+}
 
-
+img{
+align-content: center;
+display: flex;
 }

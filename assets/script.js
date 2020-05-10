@@ -9,15 +9,14 @@ $(document).ready(function(){
     event.preventDefault;
     
     var cityName=$(this).prev().val().trim();
-   // var storedCity=$(this).sibling(".search").attr("value");
     console.log("readInput is "+cityName);  
     console.log("cityList in search click event: " + cityList);
 
     if(cityName === ""){
-      $(".search").text("You didn't type anything"); //PRINT SOME UX SHIT THAT IT CANNOT BE BLANK 
+      $(".search").text("You didn't type anything"); 
     } 
     else{
-      console.log("You created an input"); /// need some valiadaion on city spelling 
+      console.log("You created an input"); 
       if (cityList.includes(cityName)){
         console.log("dont do anything, city list already includes: "+ cityName);
         
@@ -38,45 +37,27 @@ $(document).ready(function(){
   })
 
   function renderCity(cityInput) {
-    //$("#city-view").empty(); //empty list to start with 
-    //var cityList=$(".search").val().trim();
-    // Loop through the array of cities
-   // console.log("City list before loop: ", cityList);
-   // for (var i = 0; i < cityListInput.length; i++) {
       
       if (!cityList.includes(cityInput)){
-          // Then dynamicaly generating buttons for each movie in the array.
-        // This code $("<button>") is all jQuery needs to create the start and end tag. (<button></button>)
-        //console.log("CityListInput: "+ i);
         var a = $("<button>");
-        // Adding a class
         a.addClass("d-flex flex-column city-button");
-        // Adding a data-attribute with a value of the city at index i
         a.attr("data-name", cityInput);
         a.attr("id", 'button');
-        // Providing the button's text with a value of the cityList at index i
         a.text(cityInput);
-        // Adding the button to the HTML
         $("#city-view").append(a);
       }
-      
-    //}
   }  
 
   $("#city-view").on("click", ".city-button",function(){
     event.preventDefault;
     
-    //var cityName=$(".fas").prev().val().trim();
+    
     var cityName=$(this).text();
-   // var storedCity=$(this).sibling(".search").attr("value");
-   console.log("THIS:", this);
-    console.log("button is printing "+$(this).val());  
-
-    console.log("Tests to see if the button is clicked");
+    
     currentWeather(cityName);
     fiveDayForecast(cityName);
     localStorage.setItem("cityList", cityList);
-    //console.log("Local storage value is: "+localStorage.getItem("cityList"));
+   
     
   });
 
@@ -87,25 +68,22 @@ $(document).ready(function(){
 
   function setUVIndex(lat, lon){
     var APIKey = "621d0eb0706fc81d1dfe4fa639011f5e";
-    // var lat="44.98";
-    // var lon="-93.26";
+   
 
     var uv = 0;
 
-    // Here we are building the URL we need to query the database
+    
     var queryURL = "http://api.openweathermap.org/data/2.5/uvi?appid="+APIKey+"&lat="+lat+"&lon="+lon;
-    // Here we run our AJAX call to the OpenWeatherMap API
+    
     $.ajax({
       url: queryURL,
       method: "GET"
     })
-      // We store all of the retrieved data inside of an object called "response"
+      
       .then(function(response) {
 
-        // Log the queryURL
         console.log(queryURL);
 
-        // Log the resulting object
         uv = response.value;
          
         console.log("UV index in UVIndex function: " + uv);
@@ -131,18 +109,11 @@ $(document).ready(function(){
     var APIKey = "166a433c57516f51dfab1f7edaed8413";
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q="+ cityName+ "&appid=" + APIKey;
 
-    // Here we run our AJAX call to the OpenWeatherMap API
      $.ajax({
        url: queryURL,
        method: "GET"
      })
        .then(function(response) {
-
-        // Log the queryURL
-        console.log(queryURL);
-
-       // Log the resulting object
-       console.log(response);
 
         var lat=response.coord.lat;
         var lon=response.coord.lon;
@@ -153,15 +124,11 @@ $(document).ready(function(){
         $(".humidity").text("Humidity: " + response.main.humidity+"%");
         setUVIndex(lat, lon);
 
-        
-        // Convert the temp to fahrenheit
         var tempF = (response.main.temp - 273.15) * 1.80 + 32;
 
-        // add temp content to html
         $(".temp").text("Temperature (K) " + response.main.temp);
         $(".tempF").text("Temperature: " + tempF.toFixed(2)+"°F");
 
-        // Log the data in the console as well
         console.log("Wind Speed: " + response.wind.speed);
         console.log("Humidity: " + response.main.humidity);
         console.log("Temperature (F): " + tempF);
@@ -174,12 +141,12 @@ $(document).ready(function(){
 
     var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q="+cityName+"&appid="+APIKey; 
 
-    // Here we run our AJAX call to the OpenWeatherMap API
+  
     $.ajax({
       url: queryURL,
       method: "GET"
     })
-      // We store all of the retrieved data inside of an object called "response"
+      
       .then(function(response) {
 
     
@@ -260,12 +227,6 @@ $(document).ready(function(){
         oneDiv.append(tempP);
         oneDiv.append(humidP);
 
-        //print all to console.log
-        console.log(response.list[1].dt_txt);
-        console.log(response.list[1].weather[0].icon);
-        console.log((response.list[1].main.temp - 273.15) * 1.80 + 32);
-        console.log(response.list[1].main.humidity);
-      
       }); 
     };
 

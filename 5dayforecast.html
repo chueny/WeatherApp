@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>5 Day Forcast</title>
+</head>
+
+<body>
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    // This is our API key
+    var APIKey = "621d0eb0706fc81d1dfe4fa639011f5e";
+    var cityName="Seattle";
+    //var cnt= "5";
+
+    // Here we are building the URL we need to query the database
+   var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q="+cityName+"&appid="+APIKey; 
+    //var queryURL= "http://api.openweathermap.org/data/2.5/forecast/daily?q="+cityName+"&cnt="+cnt+"&appid="+APIKey;
+    
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    })
+      // We store all of the retrieved data inside of an object called "response"
+      .then(function(response) {
+
+        // Log the queryURL
+        //console.log(queryURL);
+
+        // Log the resulting object
+        console.log(response);
+        // console.log(response.list[1].dt_txt);
+        // console.log(response.list[1].weather[0].icon);
+        // console.log((response.list[1].main.temp - 273.15) * 1.80 + 32);
+        // console.log(response.list[1].main.humidity);
+        
+        
+      });
+  </script>
+</body>
+
+</html>

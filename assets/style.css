@@ -12,6 +12,15 @@ border-radius: 5px;
 max-width: 100%;
 }
 
+button{
+background-color: white;
+box-sizing: 20px;
+margin:5px;
+width: 160px;
+height: 30px;
+border-radius: 3px;
+}
+
 .col-md-4{
 background-color: #F0F0F0;
 height: auto;
@@ -22,7 +31,7 @@ padding: 20px;
 .col-md-8{
 height: auto;
 padding: 10px;
-padding-right: 20px;
+padding-right: 10px;
 
 }
 
@@ -46,4 +55,15 @@ padding: 10px;
 }
 .container-forecast{
 padding: 10px; 
+
+}
+
+.col-md-2{
+background-color: lightblue;
+margin: 5px;
+padding-top: 10px;
+border-radius: 10px;
+font-size: 15px;
+
+
 }
